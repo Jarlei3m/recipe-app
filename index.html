@@ -11,39 +11,34 @@
 <body>
     <div class="mobile-container">
         <header>
-            <input type="text">
+            <input type="text" id="search-term">
             <button id="search"><i class="material-icons">search</i></button>
         </header>
 
         <div class="fav-container">
             <h3>All Recipes!</h3>
-            <ul>
-                <li id="1">
-                    <img src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt="">
-                    <span>Icecream</span>
-                </li>
-                <li id="2">
-                    <img src="https://images.unsplash.com/photo-1553452118-621e1f860f43?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt="">
-                    <span>Chocolate</span>
-                </li>
-                <li id="3">
-                    <img src="https://images.unsplash.com/photo-1432139509613-5c4255815697?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=632&q=80" alt="">
-                    <span>Beef</span>
-                </li>
-
-                <li id="4">
-                    <img src="https://images.unsplash.com/photo-1546441471-c81f0586d0a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1052&q=80" alt="">
-                    <span>Burger Veggie</span>
-                </li>
+            <ul id="fav-meals">
+                
                                 
             </ul>
         </div>
 
         <div class="meals" id="meals">
-            <div class="meal">
-
-            </div>
+           
         </div>
     </div>
+
+    <div class="popup-container hidden" id="meal-popup">
+        
+        <div class="popup">
+            <button id="close-popup" class="close-popup"><i class="material-icons">close</i></button>
+            
+            <div class="meal-info" id="meal-info">
+                
+            </div>
+
+        </div>
+    </div>
+
 </body>
 </html>

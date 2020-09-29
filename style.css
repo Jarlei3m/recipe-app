@@ -56,6 +56,11 @@ header button {
     outline: none;
 }
 
+header button:hover {
+    transition: 0.2s;
+    color:  #ec9f05;
+}
+
 .fav-container {
     text-align: center;
 }
@@ -86,26 +91,64 @@ ul::-webkit-scrollbar {
 }
 
 .fav-container ul li {
+    position: relative;
     min-width: 100px;
     height: 100px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
 }
 
 .fav-container ul span {
     font-size: 12px;
     line-height: 18px;
+
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    max-width: 90px;
+}
+
+.fav-container ul li:hover span {
+    white-space: normal;
+    overflow: visible;
 }
 
 .fav-container ul li img {
-    cursor: pointer;
     height: 75px;
     width: 75px;
+    cursor: pointer;
 
     object-fit: cover;
     border-radius: 50%;
     border: 1px solid rgba(173, 102, 102, 0.514);
 
     box-shadow: 1px 2px 2px rgba(0, 0, 0, .5);
+}
+
+.fav-container ul li .remove{
+    background-color: transparent;
+    color: red;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+
+    outline: none;
+
+    cursor: pointer;
+
+    border: none;
+}
+
+.fav-container ul li:hover .remove{
+    opacity: 1;
+    transition: 0.2s;
 }
 
 .meal {
@@ -126,15 +169,26 @@ ul::-webkit-scrollbar {
     top: 15px;
     background-color: #FFFFFF;
 
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+
+    cursor: pointer;
+
     padding: 0.25rem 1rem;
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
+
 }
+
+.meal-header .random:hover {
+    transition: 0.2s;
+    color: #e84118;
+} 
 
 .meal-header img {
     height: 300px;
     width: 100%;
     object-fit: cover;
+    cursor: pointer;
 }
 
 .meal-body {
@@ -157,4 +211,61 @@ ul::-webkit-scrollbar {
     outline: none;
 
     color: #b44646;
+}
+
+/* MEAL INFO */
+
+.popup-container {
+    position: fixed;
+    background-color: rgba(0, 0, 0, .5);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-container.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.popup {
+    position: relative;
+    background-color: #ffffff;
+    padding: 0 2rem;
+    border-radius: 5px;
+    max-width: 600px;
+    max-height: 100vh;
+    width: 100%;
+    height: 90%;
+    overflow-y: scroll;
+}::-webkit-scrollbar {
+    background-color: transparent;
+    width: 0;
+}
+
+.meal-info h1 {
+    text-align: center;
+}
+
+.meal-info img {
+    max-width: 100%;
+}
+
+.popup .close-popup {
+    position: absolute;
+    right: 0;
+    top: 4px;
+    outline: none;
+
+    background-color: transparent;
+    border: none;
+
+    color: red;
+
+    cursor: pointer;
 }
